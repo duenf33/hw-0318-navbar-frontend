@@ -21,7 +21,9 @@ function Navbar() {
 				<NavLink to="/">
 					<h1>Logo</h1>
 				</NavLink>
-				<Bars />
+				<div onClick={handleClick}>
+					<i className={click ? 'fas fa-times' : 'fa fa-bars'}/>
+				</div>
 				<NavMenu>
 					<NavLink to="/about" activeStyle>
 						About
