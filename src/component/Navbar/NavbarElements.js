@@ -40,9 +40,9 @@ export const Bars = styled(FaBars)`
 		cursor: pointer;
 	}
 `;
-
+// tried to do the same as Bars, however it looks like the toggle is not working. It could be the style portion problem.
 export const Bs = styled(BsX)`
-display: none;
+/* display: none; */
 color: #fff;
 @media screen and (max-width: 768px) {
 		display: block;

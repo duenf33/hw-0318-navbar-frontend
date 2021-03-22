@@ -22,7 +22,9 @@ function Navbar() {
 					<h1>Logo</h1>
 				</NavLink>
 				<div onClick={handleClick}>
-					<i className={click ? 'fas fa-times' : 'fa fa-bars'}/>
+					{/* <i className={click ? Bars : null} style={{color: "white" }}/> */}
+					<Bars className={(click) =>  Bs} />
+					{console.log("Clicking works")}
 				</div>
 				<NavMenu>
 					<NavLink to="/about" activeStyle>
