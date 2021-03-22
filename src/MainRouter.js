@@ -5,7 +5,7 @@ import About from "./component/pages/About";
 import Services from "./component/pages/Services";
 import ContactUs from "./component/pages/ContactUs";
 import SignUp from "./component/pages/SignUp";
-// import SignIn from "./component/pages/SignIn";
+import SignIn from "./component/pages/SignIn";
 import Navbar from "./component/Navbar/Navbar";
 
 const MainRouter = () => {
@@ -14,11 +14,11 @@ const MainRouter = () => {
 			<Navbar />
 			<Switch>
 				<Route path="/" exact component={Home} />
-				<Route path="/about" exact component={About} />
-				<Route path="/services" exact component={Services} />
-				<Route path="/contact-us" exact component={ContactUs} />
-				<Route path="/sign-up" exact component={SignUp} />
-				{/* <Route path="/sign-in" exact component={Home} /> */}
+				<Route path="/about" component={About} />
+				<Route path="/services" component={Services} />
+				<Route path="/contact-us" component={ContactUs} />
+				<Route path="/sign-up" component={SignUp} />
+				<Route path="/sign-in" component={SignIn} />
 			</Switch>
 		</Router>
 	);

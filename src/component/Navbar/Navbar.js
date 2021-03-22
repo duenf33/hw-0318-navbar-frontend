@@ -41,9 +41,6 @@ function Navbar() {
 					</NavLink>
 					<NavBtnLink to="/sign-in">Sign In</NavBtnLink>
 				</NavMenu>
-				{/* <NavBtn>
-					<NavBtnLink to="/sign-in">Sign In</NavBtnLink>
-				</NavBtn> */}
 			</Nav>
 		</>
 	);
