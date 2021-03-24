@@ -13,12 +13,12 @@ const MainRouter = () => {
 		<Router>
 			<Navbar />
 			<Switch>
-				<Route path="/" exact component={Home} />
-				<Route path="/about" component={About} />
 				<Route path="/services" component={Services} />
 				<Route path="/contact-us" component={ContactUs} />
 				<Route path="/sign-up" component={SignUp} />
 				<Route path="/sign-in" component={SignIn} />
+				<Route path="/about" component={About} />
+				<Route path="/" exact component={Home} />
 			</Switch>
 		</Router>
 	);
