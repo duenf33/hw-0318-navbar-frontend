@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./SignUp.css"
+
 export class SignUp extends Component {
 	render() {
 		return (
@@ -19,6 +21,7 @@ export class SignUp extends Component {
 							type="text"
 							name="name"
 							placeholder="First Name"
+							id="inputFirstName"
 							// value={firstName}
 							required
 						/>
@@ -30,6 +33,7 @@ export class SignUp extends Component {
 							type="text"
 							name="name"
 							placeholder="Last Name"
+							id="inputLastName"
 							// value={lastName}
 							required
 						/>
@@ -41,6 +45,7 @@ export class SignUp extends Component {
 							type="email"
 							name="email"
 							placeholder="E-mail Address"
+							id="inputEmail"
 							// value={email}
 							required
 						/>
@@ -53,6 +58,7 @@ export class SignUp extends Component {
 							type="text"
 							name="password"
 							placeholder="Password"
+							id="inputPassword"
 							// value={password}
 							required
 						/>
@@ -65,14 +71,13 @@ export class SignUp extends Component {
 							type="text"
 							name="confirmPassword"
 							placeholder="Confirm Password"
+							id="inputConfirmPassword"
 							// value={confirmPassword}
 							required
 						/>
-						<div className="form-button">
-							<button className="w-100 btn btn-lg btn-primary" type="submit">
-								Register
-							</button>
-						</div>
+						<button className="w-100 btn btn-lg btn-primary" type="submit">
+							Register
+						</button>
 					</form>
 				</main>
 			</div>
