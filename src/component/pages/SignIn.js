@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import axios from "axios";
+import React, { Component } from "react";
 
 export class SignIn extends Component {
-  state = {
+	state = {
 		email: "",
 		password: "",
 	};
@@ -13,13 +14,19 @@ export class SignIn extends Component {
 	handleSignInSubmit = async (event) => {
 		event.preventDefault();
 		try {
-
+			let result = await axios.post("http://localhost:3001/users/login", {
+				email: this.state.email,
+				password: this.state.password,
+			});
+			this.props.history.push("member-home");
 		} catch (e) {
-
-		}
+			console.log(e)
+		} 
+			
+		
 	};
-  render() {
-    const { email, password } = this.state;
+	render() {
+		const { email, password } = this.state;
 		return (
 			<div className="form-body">
 				<main className="form-signin">
@@ -60,7 +67,7 @@ export class SignIn extends Component {
 				</main>
 			</div>
 		);
-  }
+	}
 }
 
-export default SignIn
+export default SignIn;

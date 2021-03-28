@@ -5,7 +5,6 @@ export class Home extends Component {
 		return (
 			<div>
 				Home
-				{console.log("this home works")}
 			</div>
 		);
 	}

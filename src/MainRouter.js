@@ -7,6 +7,7 @@ import ContactUs from "./component/pages/ContactUs";
 import SignUp from "./component/pages/SignUp";
 import SignIn from "./component/pages/SignIn";
 import Navbar from "./component/Navbar/Navbar";
+import MemberHome from "./component/pages/MemberHome";
 
 const MainRouter = () => {
 	return (
@@ -18,6 +19,7 @@ const MainRouter = () => {
 				<Route path="/sign-up" component={SignUp} />
 				<Route path="/sign-in" component={SignIn} />
 				<Route path="/about" component={About} />
+				<Route path="/member-home" component={MemberHome} />
 				<Route path="/" exact component={Home} />
 			</Switch>
 		</Router>

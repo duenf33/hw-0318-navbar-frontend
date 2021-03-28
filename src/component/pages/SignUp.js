@@ -15,8 +15,16 @@ export class SignUp extends Component {
 			confirmPassword: "",
 			isError: false,
 			isErrorObj: {},
+			mount: false,
 		};
 	}
+
+	// componentWillMount = () => {
+	// 	if (this.state.mount === true) {
+	// 		this.props.history.push("/home");
+	// 	}
+	// };
+
 	handleSignup = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
@@ -31,40 +39,45 @@ export class SignUp extends Component {
 
 	handleOnSubmit = async (event) => {
 		event.preventDefault();
-	
-		let {
-			firstName,
-			lastName,
-			email,
-			password,
-			isError,
-			// confirmPassword,
-		} = this.state;
+		let { firstName, lastName, email, password, isError } = this.state;
 
 		if (isError) {
-			console.log("its broken, line 46")
+			console.log(isError);
+			return;
 		}
 
 		try {
-			let result = await axios.post("http://localhost:3001/sign-up", {
+			let result = await axios.post("http://localhost:3001/users/sign-up", {
 				firstName,
 				lastName,
 				email,
 				password,
 			});
-console.log(result)
-			console.log("on submit works");
+			console.log(result.statusText);
+			console.log(this.props.history);
+			
 			this.setState({
 				firstName: "",
 				lastName: "",
 				email: "",
 				password: "",
 				confirmPassword: "",
+				mount: true,
 			});
+			this.relocation()
 		} catch (e) {
 			console.log(e);
 		}
-	}
+	};
+
+	relocation() {
+		console.log('relocation function-73')
+		console.log(this.state.mount);
+		if (this.state.mount) {
+			this.props.history.push("/sign-in");
+		}
+		console.log('relocation function-78')
+	};
 
 	render() {
 		const {
@@ -150,7 +163,12 @@ console.log(result)
 							required
 							onChange={this.handleOnPasswordChange}
 						/>
-						<button className="w-100 btn btn-lg btn-primary" type="submit">
+						<button
+							className="w-100 btn btn-lg btn-primary"
+							type="submit"
+							// onClick={() => { this.relocation() }}
+							>
+							{console.log("this button works")}
 							Register
 						</button>
 					</form>

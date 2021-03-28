@@ -10,7 +10,8 @@ import {
 	NavBtnLink,
 } from "./NavbarElements";
 
-function Navbar() {
+function Navbar(props) {
+	console.log(props)
 	const [click, setClick] = useState(false);
 
 	const handleClick = () => setClick(!click);
